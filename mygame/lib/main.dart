@@ -1,5 +1,18 @@
-import 'package:flame/game/base_game.dart';
+import 'package:flame/components.dart';
+import 'package:flame/game.dart';
+import 'package:flutter/cupertino.dart';
 
-main() async {}
+void main() async {
+  final myGame = MyGame();
+  runApp(GameWidget(game: myGame));
+}
 
-class myGame extends BaseGame {}
+class MyGame extends FlameGame {
+  SpriteComponent avatar = SpriteComponent();
+  SpriteComponent fondo = SpriteComponent();
+  @override
+  Future<void> onLoad() async {
+    //load game assets
+    super.onLoad();
+  }
+}
